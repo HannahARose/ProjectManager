@@ -14,8 +14,8 @@ public class WorkerController : Controller
 
     public IActionResult Index()
     {
-	TempData["isManager"] = User.IsInRole("Manager");
-	TempData["isWorker"] = User.IsInRole("Worker");
+        TempData["isManager"] = User.IsInRole("Manager");
+        TempData["isWorker"] = User.IsInRole("Worker");
         return View();
     }
 }

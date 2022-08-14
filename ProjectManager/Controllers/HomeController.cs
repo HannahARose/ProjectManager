@@ -16,23 +16,23 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-	TempData["isManager"] = User.IsInRole("Manager");
-	TempData["isWorker"] = User.IsInRole("Worker");
+        TempData["isManager"] = User.IsInRole("Manager");
+        TempData["isWorker"] = User.IsInRole("Worker");
         return View();
     }
 
     public IActionResult Privacy()
     {
-	TempData["isManager"] = User.IsInRole("Manager");
-	TempData["isWorker"] = User.IsInRole("Worker");
+        TempData["isManager"] = User.IsInRole("Manager");
+        TempData["isWorker"] = User.IsInRole("Worker");
         return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-	TempData["isManager"] = User.IsInRole("Manager");
-	TempData["isWorker"] = User.IsInRole("Worker");
+        TempData["isManager"] = User.IsInRole("Manager");
+        TempData["isWorker"] = User.IsInRole("Worker");
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
