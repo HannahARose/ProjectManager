@@ -11,15 +11,15 @@ namespace ProjectManager.Models
         
         [ForeignKey("EventTypes")]
         public int EventTypeId { get; set; }
-        public EventType EventType { get; set; }
+        public EventType? EventType { get; set; }
 
         [ForeignKey("NTasks")]
         public int TaskId { get; set; }
-        public NTask Task { get; set; }
+        public NTask? Task { get; set; }
 
         [ForeignKey("AspNetUsers")]
         public string UserId { get; set; } = String.Empty;
-        public IdentityUser User { get; set; }
+        public IdentityUser? User { get; set; }
 
         [Required]
         public int Value { get; set; } = 1;

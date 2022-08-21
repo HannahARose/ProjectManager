@@ -1,0 +1,41 @@
+@model IEnumerable<ProjectManager.Models.NTask>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index">
+    <div class="form-group">
+        <label for="ProjectId" class="control-label">Filter By Project</label>
+        <select id="ProjectId" name="ProjectId" class="form-control" asp-items="ViewBag.ProjectId" onchange="TaskSelectProject()"></select>
+    </div>
+</form>
+
+<div id="TableDiv"></div>
+
+@section Scripts {
+<script>
+        function TaskSelectProject() {
+    var _projectId = $('#ProjectId').val();
+
+    $.ajax({
+        type: 'POST',
+        cache: false,
+        url: 'Task/TaskTable',
+        data: { ProjectId: _projectId },
+        success: function (response) {
+            $("#TableDiv").empty();
+            $("#TableDiv").html(response);
+        }
+    });
+};
+
+window.onload = TaskSelectProject;
+</script>
+}

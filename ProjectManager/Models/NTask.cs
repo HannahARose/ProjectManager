@@ -14,6 +14,6 @@ namespace ProjectManager.Models
 
         [ForeignKey("Projects")]
         public int ProjectId { get; set; }
-        public Project Project { get; set; }
+        public Project? Project { get; set; }
     }
 }

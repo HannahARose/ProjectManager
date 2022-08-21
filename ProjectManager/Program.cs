@@ -38,6 +38,18 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "Project",
+    pattern: "Manager/Project/{action=Index}/{id?}",
+    defaults: new { controller = "ManagerProject" });
+app.MapControllerRoute(
+    name: "Task",
+    pattern: "Manager/Task/{action=Index}/{id?}",
+    defaults: new { controller = "ManagerTask" });
+app.MapControllerRoute(
+    name: "EventType",
+    pattern: "Manager/EventType/{action=Index}/{id?}",
+    defaults: new { controller = "ManagerEventType" });
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();

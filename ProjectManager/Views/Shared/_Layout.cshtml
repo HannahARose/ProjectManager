@@ -20,18 +20,27 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-		    @if ((bool)(TempData["isManager"] ?? false)) 
-		    {
-                        <li class="nav-item">
-		    <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="Index">Manager</a>
-                        </li>
-		    } 
-		    @if ((bool)(TempData["isWorker"] ?? false)) 
-		    {
-                        <li class="nav-item">
-		    <a class="nav-link text-dark" asp-area="" asp-controller="Worker" asp-action="Index">Worker</a>
-                        </li>
-		    }
+                        @if ((bool)(TempData["isManager"] ?? false))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="Index">Manager</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ManagerProject" asp-action="Index">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ManagerTask" asp-action="Index">Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ManagerEventType" asp-action="Index">Event Types</a>
+                            </li>
+                        }
+                        @if ((bool)(TempData["isWorker"] ?? false))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Worker" asp-action="Index">Worker</a>
+                            </li>
+                        }
                         <li class="nav-item">
                         </li>
                         <li class="nav-item">
